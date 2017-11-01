@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SNMediator_Example' do
+  pod 'SNMediator', :path => '../'
+
+  target 'SNMediator_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
