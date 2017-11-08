@@ -255,6 +255,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = yangjie2;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 8F3KT864KL;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -375,7 +378,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SNMediator_Example/Pods-SNMediator_Example-resources.sh",
-				"${PODS_ROOT}/../../SNMediator/Assets/Modules.plist",
 				"${PODS_ROOT}/../../SNMediator/Assets/SNMediator.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -498,8 +500,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -531,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -543,6 +545,7 @@
 			baseConfigurationReference = DE32F230C4C091308C56097C /* Pods-SNMediator_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8F3KT864KL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SNMediator/SNMediator-Prefix.pch";
 				INFOPLIST_FILE = "SNMediator/SNMediator-Info.plist";
@@ -558,6 +561,7 @@
 			baseConfigurationReference = B336B06379F3DA4E77F9C57D /* Pods-SNMediator_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8F3KT864KL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SNMediator/SNMediator-Prefix.pch";
 				INFOPLIST_FILE = "SNMediator/SNMediator-Info.plist";

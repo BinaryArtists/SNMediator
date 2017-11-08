@@ -9,4 +9,6 @@
 
 @interface SNMediator : NSObject
 
++ (instancetype)shareInstance;
+
 @end

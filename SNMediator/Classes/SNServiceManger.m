@@ -15,5 +15,30 @@
 
 @end
 @implementation SNServiceManger
+static SNServiceManger *instance = nil;
++ (instancetype)shareInstance
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        instance = [super allocWithZone:zone];
+    });
+    return instance;
+}
+
+#pragma mark - public
+- (BOOL)registerServices:(NSDictionary *)modulesDict
+{
+    
+}
+
 
 @end

@@ -7,10 +7,13 @@
 
 #import "SNMediator.h"
 #import "SNModuleConfig.h"
+#import "SNMediatorMacro.h"
+#import "SNRouteManger.h"
+#import "SNServiceManger.h"
 
 @interface SNMediator()
-
-@property (nonatomic, strong) NSRecursiveLock *lock;
+@property (strong, nonatomic) NSMutableDictionary<NSString *,SNModuleConfig *> *modulesConfigDict;
+@property (strong, nonatomic) NSRecursiveLock *lock;
 
 @end
 
@@ -34,24 +37,13 @@ static SNMediator *instance = nil;
     return instance;
 }
 
-- (BOOL)loadLocalModules
+#pragma mark - public
+- (BOOL)registerAllModules
 {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SNMediator.bundle/Modules" ofType:@"plist"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
-        return NO;
-    }
-    NSArray *plistArr = [[NSArray alloc] initWithContentsOfFile:plistPath];
-    if (plistArr&&[plistArr isKindOfClass:[NSArray class]]) {
-        for (id obj in plistArr) {
-            if ([obj isKindOfClass:[NSDictionary class]]) {
-                SNModuleConfig *moduleConfig = [SNModuleConfig newWithDict:obj];
-                if (!moduleConfig.name) {
-                    return NO;
-                }
-            }
-        }
-        
-    }
+    BOOL flag1 = [self loadLocalModules];
+    BOOL flag2 = [[SNRouteManger shareInstance] registerRouters:_modulesConfigDict];
+    BOOL flag3 = [[SNServiceManger shareInstance] registerServices:_modulesConfigDict];
+    return flag1&&flag2&&flag3;
 }
 
 
@@ -65,8 +57,50 @@ static SNMediator *instance = nil;
 
 
 
+#pragma mark - private
+//加载本地 plist 文件中配置的所有模块，生成对应的模块配置数据并保存在 modulesConfigDict 中
+- (BOOL)loadLocalModules
+{
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SNMediator.bundle/Modules" ofType:@"plist"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+        return NO;
+    }
+    NSArray *plistArr = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    if (plistArr&&[plistArr isKindOfClass:[NSArray class]]) {
+        for (NSDictionary * configDict in plistArr) {
+            SNModuleConfig *moduleConfig = [SNModuleConfig newWithDict:configDict];
+            if (!moduleConfig.name) {
+                return NO;
+            }
+            if (self.modulesConfigDict[moduleConfig.name]) {
+                SNAssert(NO,@"注册错误, 已经存在模块: %@",moduleConfig.name);
+            }
+            [self.modulesConfigDict setValue:moduleConfig forKey:moduleConfig.name];
+        }
+        
+        return YES;
+    }
+    return NO;
+}
 
 
+
+
+
+
+
+
+
+
+
+#pragma mark - getter
+- (NSMutableDictionary<NSString *,SNModuleConfig *> *)modulesConfigDict
+{
+    if (!_modulesConfigDict) {
+        _modulesConfigDict = [NSMutableDictionary dictionaryWithCapacity:6];
+    }
+    return _modulesConfigDict;
+}
 
 
 @end
