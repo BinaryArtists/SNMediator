@@ -5,15 +5,15 @@
 //  Created by 杨洁 on 2017/11/6.
 //
 
-#import "SNRouter.h"
+#import "SNRouterManger.h"
 #import "SNRouterItem.h"
 
-@interface SNRouter ()
-@property (strong, nonatomic) NSMutableDictionary<NSString *,SNRouter *> *moduleRouterDict;
+@interface SNRouterManger ()
+@property (strong, nonatomic) NSMutableDictionary *moduleRouterDict;
 @property (strong, nonatomic) NSMutableDictionary<NSString *,SNRouterItem *> *routerItemDict; //页面名(path)为key，SNRouterItem对象为value
 
 @end
-@implementation SNRouter 
+@implementation SNRouterManger
 
 
 @end

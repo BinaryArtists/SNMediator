@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 //负责页面路由跳转
-@interface SNRouter : NSObject
+@interface SNRouterManger : NSObject
 
 - (BOOL)canOpenURL:(nonnull NSURL *)URL;
 - (BOOL)openURL:(nonnull NSURL *)RUL withParams:(NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))completion;
