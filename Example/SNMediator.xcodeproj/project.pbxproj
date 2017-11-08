@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42480D63C5724B71D9A0257E /* Pods_SNMediator_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F8851FCD8AFA4E4D012210 /* Pods_SNMediator_Tests.framework */; };
-		598DE3CDA3F71EE3D7C4123F /* Pods_SNMediator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDADC99861D12CD9F49A36F3 /* Pods_SNMediator_Example.framework */; };
+		1B4BAE12B4076E22BC425CB3 /* libPods-SNMediator_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD2352A8A904E36453BA4C7 /* libPods-SNMediator_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -24,6 +23,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		AEC04A891FADFFB300714309 /* SNTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC04A881FADFFB300714309 /* SNTestModel.m */; };
+		ECAA9FFFF88F08B7ACC60E24 /* libPods-SNMediator_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2676EEF50405F98728AD3 /* libPods-SNMediator_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AD2352A8A904E36453BA4C7 /* libPods-SNMediator_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNMediator_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DDDA7F29496C6BE4E8A617 /* Pods-SNMediator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNMediator_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNMediator_Tests/Pods-SNMediator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		49C5D5D4149A55F2E4E71603 /* SNMediator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SNMediator.podspec; path = ../SNMediator.podspec; sourceTree = "<group>"; };
-		534DC8BE56FF99F152133C44 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		23A2676EEF50405F98728AD3 /* libPods-SNMediator_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNMediator_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C5D5D4149A55F2E4E71603 /* SNMediator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SNMediator.podspec; path = ../SNMediator.podspec; sourceTree = "<group>"; };
+		534DC8BE56FF99F152133C44 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SNMediator_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNMediator_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,11 +65,11 @@
 		6E81DEC545C5F0F7D47FECA5 /* Pods-SNMediator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNMediator_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNMediator_Tests/Pods-SNMediator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AEC04A871FADFFB300714309 /* SNTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNTestModel.h; sourceTree = "<group>"; };
+		AEC04A881FADFFB300714309 /* SNTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNTestModel.m; sourceTree = "<group>"; };
 		B336B06379F3DA4E77F9C57D /* Pods-SNMediator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNMediator_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNMediator_Example/Pods-SNMediator_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DDADC99861D12CD9F49A36F3 /* Pods_SNMediator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNMediator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE32F230C4C091308C56097C /* Pods-SNMediator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNMediator_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNMediator_Example/Pods-SNMediator_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F2F8851FCD8AFA4E4D012210 /* Pods_SNMediator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNMediator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC3ABF0D0C87522D072A3CFC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FC3ABF0D0C87522D072A3CFC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +80,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				598DE3CDA3F71EE3D7C4123F /* Pods_SNMediator_Example.framework in Frameworks */,
+				ECAA9FFFF88F08B7ACC60E24 /* libPods-SNMediator_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +91,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				42480D63C5724B71D9A0257E /* Pods_SNMediator_Tests.framework in Frameworks */,
+				1B4BAE12B4076E22BC425CB3 /* libPods-SNMediator_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +137,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				DDADC99861D12CD9F49A36F3 /* Pods_SNMediator_Example.framework */,
-				F2F8851FCD8AFA4E4D012210 /* Pods_SNMediator_Tests.framework */,
+				23A2676EEF50405F98728AD3 /* libPods-SNMediator_Example.a */,
+				0AD2352A8A904E36453BA4C7 /* libPods-SNMediator_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,6 +154,8 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				AEC04A871FADFFB300714309 /* SNTestModel.h */,
+				AEC04A881FADFFB300714309 /* SNTestModel.m */,
 			);
 			name = "Example for SNMediator";
 			path = SNMediator;
@@ -369,9 +374,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SNMediator_Example/Pods-SNMediator_Example-resources.sh",
+				"${PODS_ROOT}/../../SNMediator/Assets/Modules.plist",
+				"${PODS_ROOT}/../../SNMediator/Assets/SNMediator.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,6 +414,7 @@
 			files = (
 				6003F59E195388D20070C39A /* SNAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* SNViewController.m in Sources */,
+				AEC04A891FADFFB300714309 /* SNTestModel.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

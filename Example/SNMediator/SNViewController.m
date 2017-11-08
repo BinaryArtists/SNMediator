@@ -7,6 +7,8 @@
 //
 
 #import "SNViewController.h"
+#import "NSObject+SNTargetAction.h"
+#import "SNTestModel.h"
 
 @interface SNViewController ()
 
@@ -17,6 +19,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSMutableDictionary *params = @{}.mutableCopy;
+    [params setValue:@(12) forKey:@"age"];
+    [params setValue:@"杨洁" forKey:@"name"];
+    id testModel = [[SNTestModel alloc] init];
+    [testModel sn_setParams:params];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
