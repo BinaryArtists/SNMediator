@@ -12,7 +12,7 @@
 #import "SNServiceManger.h"
 
 @interface SNMediator()
-@property (strong, nonatomic) NSMutableDictionary<NSString *,SNModuleConfig *> *modulesConfigDict;
+@property (strong, nonatomic) NSMutableDictionary<NSString *,SNModuleConfig *> *modulesConfigDict;//所有模块配置集合，以模块名为key，SNModuleConfig对象为value
 @property (strong, nonatomic) NSRecursiveLock *lock;
 
 @end
@@ -77,7 +77,6 @@ static SNMediator *instance = nil;
             }
             [self.modulesConfigDict setValue:moduleConfig forKey:moduleConfig.name];
         }
-        
         return YES;
     }
     return NO;
@@ -97,7 +96,7 @@ static SNMediator *instance = nil;
 - (NSMutableDictionary<NSString *,SNModuleConfig *> *)modulesConfigDict
 {
     if (!_modulesConfigDict) {
-        _modulesConfigDict = [NSMutableDictionary dictionaryWithCapacity:6];
+        _modulesConfigDict = [NSMutableDictionary dictionaryWithCapacity:4];
     }
     return _modulesConfigDict;
 }

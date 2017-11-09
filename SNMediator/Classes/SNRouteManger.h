@@ -6,6 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+@class UIViewController;
+@class SNRouterItem;
 
 //负责页面路由跳转
 NS_ASSUME_NONNULL_BEGIN
@@ -16,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)registerRouters:(NSDictionary *)modulesDict;
 
 - (BOOL)canOpenURL:(NSURL *)URL;
-- (BOOL)openURL:(NSURL *)RUL withParams:(NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))completion;
+- (BOOL)openURL:(NSURL *)URL withParams:(NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))completion;
 
-- (id)viewControllerForURL:(NSURL *)URL params:(nullable NSDictionary *)params;
+- (UIViewController *)viewControllerForURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (SNRouterItem  *routerItem))block;
 
 
 @end

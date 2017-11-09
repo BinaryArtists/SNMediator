@@ -379,6 +379,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SNMediator_Example/Pods-SNMediator_Example-resources.sh",
 				"${PODS_ROOT}/../../SNMediator/Assets/SNMediator.bundle",
+				"${PODS_ROOT}/../../SNMediator/Classes/SNErrorViewController.xib",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

@@ -20,6 +20,7 @@
 #define SNAssert(condition,...)
 #endif
 
+#define SNURL(urlString) [NSURL sn_URLWithString:urlString]
 
 
 

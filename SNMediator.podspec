@@ -17,8 +17,8 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'git@github.com:yangjie2/SNMediator.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
-  s.source_files = 'SNMediator/Classes/**/*'
+  s.source_files = 'SNMediator/Classes/**/*.{h,m}'
 
-  s.resource = 'SNMediator/Assets/*'
+  s.resources = ['SNMediator/Assets/*','SNMediator/Classes/*.xib']
 
 end
