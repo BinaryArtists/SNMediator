@@ -15,7 +15,16 @@
 			<dict/>
 		</array>
 		<key>serviceList</key>
-		<array/>
+		<array>
+			<dict>
+				<key>name</key>
+				<string></string>
+				<key>className</key>
+				<string></string>
+				<key>protocol</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict/>
 	<dict/>

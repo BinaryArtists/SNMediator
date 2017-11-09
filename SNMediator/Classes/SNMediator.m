@@ -10,6 +10,7 @@
 #import "SNMediatorMacro.h"
 #import "SNRouteManger.h"
 #import "SNServiceManger.h"
+#import "SNAppLifeManger.h"
 
 @interface SNMediator()
 @property (strong, nonatomic) NSMutableDictionary<NSString *,SNModuleConfig *> *modulesConfigDict;//所有模块配置集合，以模块名为key，SNModuleConfig对象为value
@@ -41,6 +42,7 @@ static SNMediator *instance = nil;
 - (BOOL)registerAllModules
 {
     BOOL flag1 = [self loadLocalModules];
+    [[SNAppLifeManger shareInstance] registerAppLife:_modulesConfigDict];
     BOOL flag2 = [[SNRouteManger shareInstance] registerRouters:_modulesConfigDict];
     BOOL flag3 = [[SNServiceManger shareInstance] registerServices:_modulesConfigDict];
     return flag1&&flag2&&flag3;

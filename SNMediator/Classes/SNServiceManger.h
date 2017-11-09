@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 //注册所有模块的服务
 - (BOOL)registerServices:(NSDictionary *)modulesDict;
 
+/**
+ *  从所有注册的服务中获取某个服务
+ *
+ */
+- (id)getService:(NSString *)serviceName;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -46,8 +46,6 @@ static SNRouteManger *instance = nil;
         return NO;
     }
     _modulesConfigDict = (NSDictionary<NSString *,SNModuleConfig *> *)modulesDict;
-    
-    
     return YES;
 }
 
@@ -140,6 +138,19 @@ static SNRouteManger *instance = nil;
 }
 
 
+
+#pragma mark - setter/getter
+- (NSCache<NSString *,SNRouterItem *> *)routerItemCache
+{
+    if (!_routerItemCache) {
+        _routerItemCache = [[NSCache alloc] init];
+        _routerItemCache.countLimit = 400;
+    }
+    return _routerItemCache;
+}
+
+
+#pragma mark - private
 //根据path(页面名)获取routeritem 确保path字符串前后都没有@"/"符号
 - (SNRouterItem *)routerItemWithURLPath:(NSString *)path moduleConfig:(SNModuleConfig *)config
 {
@@ -186,18 +197,6 @@ static SNRouteManger *instance = nil;
     }
 }
 
-#pragma mark - setter/getter
-- (NSCache<NSString *,SNRouterItem *> *)routerItemCache
-{
-    if (!_routerItemCache) {
-        _routerItemCache = [[NSCache alloc] init];
-        _routerItemCache.countLimit = 400;
-    }
-    return _routerItemCache;
-}
-
-
-#pragma mark - private
 - (NSString*)nibFileWithClass:(Class)class {
     BOOL nibFileExist = ([[NSBundle mainBundle] pathForResource:NSStringFromClass(class) ofType:@"nib"] != nil);
     //如果没有对应的nib，但是父类不是UIViewController，则继续查找替用父类的nib
