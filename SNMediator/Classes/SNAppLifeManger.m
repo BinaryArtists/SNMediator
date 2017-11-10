@@ -10,7 +10,8 @@
 #import "NSObject+SNTargetAction.h"
 
 @interface SNAppLifeManger ()
-@property (nonatomic, strong) NSMutableSet<id <SNAppDelegate>> *appDelegateInstanceSet;
+@property (nonatomic, strong) NSMutableSet<id <SNAppDelegate>> *moduleDelegateInstanceSet; //存放moduleDelegate实例对象
+
 @end
 
 @implementation SNAppLifeManger
@@ -41,7 +42,7 @@ static SNAppLifeManger *instance = nil;
         if (obj.delegateClass) {
             Class delegateClass = NSClassFromString(obj.delegateClass);
             if (delegateClass&&[delegateClass conformsToProtocol:@protocol(SNAppDelegate)]) {
-                [self.appDelegateInstanceSet addObject:[[delegateClass alloc] init]];
+                [self.moduleDelegateInstanceSet addObject:[[delegateClass alloc] init]];
             }
         }
     }];
@@ -49,11 +50,11 @@ static SNAppLifeManger *instance = nil;
 
 - (void)performDelegateSelector:(SEL)selector, ...
 {
-    for (id<SNAppDelegate> appDelegateInstance in self.appDelegateInstanceSet) {
-        if ([appDelegateInstance respondsToSelector:selector]&&[appDelegateInstance isKindOfClass:[NSObject class]]) {
+    for (id<SNAppDelegate> moduleDelegateInstance in self.moduleDelegateInstanceSet) {
+        if ([moduleDelegateInstance respondsToSelector:selector]&&[moduleDelegateInstance isKindOfClass:[NSObject class]]) {
             va_list args;
             va_start(args, selector);
-            NSObject *moduleObj = (NSObject*)appDelegateInstance;
+            NSObject *moduleObj = (NSObject*)moduleDelegateInstance;
             NSMethodSignature * sig = [moduleObj methodSignatureForSelector:selector];
             if (!sig) { [moduleObj doesNotRecognizeSelector:selector]; continue; }
             NSInvocation *inv = [NSInvocation invocationWithMethodSignature:sig];
@@ -69,11 +70,11 @@ static SNAppLifeManger *instance = nil;
 - (void)performDelegateBlock:(void(^)(id<SNAppDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...
 {
     BOOL stop = NO;
-    for (id<SNAppDelegate> appDelegateInstance in self.appDelegateInstanceSet) {
-        if ([appDelegateInstance respondsToSelector:selector]&&[appDelegateInstance isKindOfClass:[NSObject class]]) {
+    for (id<SNAppDelegate> moduleDelegateInstance in self.moduleDelegateInstanceSet) {
+        if ([moduleDelegateInstance respondsToSelector:selector]&&[moduleDelegateInstance isKindOfClass:[NSObject class]]) {
             va_list args;
             va_start(args, selector);
-            NSObject *moduleObj = (NSObject*)appDelegateInstance;
+            NSObject *moduleObj = (NSObject*)moduleDelegateInstance;
             NSMethodSignature * sig = [moduleObj methodSignatureForSelector:selector];
             if (!sig) { [moduleObj doesNotRecognizeSelector:selector]; continue; }
             NSInvocation *inv = [NSInvocation invocationWithMethodSignature:sig];
@@ -82,7 +83,7 @@ static SNAppLifeManger *instance = nil;
             [inv setSelector:selector];
             [NSObject sn_setInv:inv withSig:sig andArgs:args];
             [inv invoke];
-            block(appDelegateInstance, [NSObject sn_getReturnFromInv:inv withSig:sig], &stop);
+            block(moduleDelegateInstance, [NSObject sn_getReturnFromInv:inv withSig:sig], &stop);
             if (stop) {
                 break;
             }
@@ -91,12 +92,12 @@ static SNAppLifeManger *instance = nil;
 }
 
 #pragma mark - setter
-- (NSMutableSet<id<SNAppDelegate>> *)appDelegateInstanceSet
+- (NSMutableSet<id<SNAppDelegate>> *)moduleDelegateInstanceSet
 {
-    if (!_appDelegateInstanceSet) {
-        _appDelegateInstanceSet = [[NSMutableSet alloc] initWithCapacity:4];
+    if (!_moduleDelegateInstanceSet) {
+        _moduleDelegateInstanceSet = [[NSMutableSet alloc] initWithCapacity:4];
     }
-    return _appDelegateInstanceSet;
+    return _moduleDelegateInstanceSet;
 }
 
 
