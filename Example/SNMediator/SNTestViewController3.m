@@ -37,7 +37,7 @@
 
 - (IBAction)buttonClicked:(id)sender
 {
-    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end
