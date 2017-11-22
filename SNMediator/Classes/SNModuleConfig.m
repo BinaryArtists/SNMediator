@@ -20,6 +20,7 @@
     return instance;
 }
 
+
 #pragma mark - setter
 - (void)setRouterList:(NSArray<SNRouterItem *> *)routerList
 {
@@ -54,5 +55,6 @@
     }];
     _routerList = tempServiceList;
 }
+
 
 @end

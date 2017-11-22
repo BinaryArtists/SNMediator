@@ -4,29 +4,40 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>VideoModule</string>
+		<string>testModule</string>
 		<key>scheme</key>
 		<string>snow</string>
 		<key>delegateClass</key>
 		<string></string>
 		<key>routerList</key>
 		<array>
-			<dict/>
-			<dict/>
-		</array>
-		<key>serviceList</key>
-		<array>
 			<dict>
 				<key>name</key>
-				<string></string>
+				<string>vcone</string>
 				<key>className</key>
-				<string></string>
-				<key>protocol</key>
-				<string></string>
+				<string>SNTestViewController1</string>
+				<key>routeType</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>vctwo</string>
+				<key>className</key>
+				<string>SNTestViewController2</string>
+				<key>routeType</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>vcthree</string>
+				<key>className</key>
+				<string>SNTestViewController3</string>
+				<key>routeType</key>
+				<integer>1</integer>
 			</dict>
 		</array>
+		<key>serviceList</key>
+		<array/>
 	</dict>
-	<dict/>
-	<dict/>
 </array>
 </plist>

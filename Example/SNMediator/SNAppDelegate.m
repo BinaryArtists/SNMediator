@@ -7,12 +7,13 @@
 //
 
 #import "SNAppDelegate.h"
+#import "SNMediator.h"
 
 @implementation SNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[SNMediator shareInstance] registerAllModules];
     return YES;
 }
 

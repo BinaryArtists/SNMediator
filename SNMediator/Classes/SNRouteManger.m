@@ -39,6 +39,7 @@ static SNRouteManger *instance = nil;
     return instance;
 }
 
+
 #pragma mark - public
 - (BOOL)registerRouters:(NSDictionary *)modulesDict
 {
@@ -118,14 +119,11 @@ static SNRouteManger *instance = nil;
     NSString *path = URL.sn_path;
     SNModuleConfig *moduleConfig = [self.modulesConfigDict objectForKey:host];
     routerItem = [self routerItemWithURLPath:path moduleConfig:moduleConfig];
-    viewController = [self viewControllerWithItem:routerItem params:params];
-   
-    //host与模块名不相同，匹配全路径
-    if (!viewController) {
+    if (!routerItem) {     //host与模块名不相同，匹配全路径
         NSString *fullPath = [host stringByAppendingPathComponent:path]; //路径拼接，会在字符串前自动添加“/”
         routerItem = [self routerItemWithURLPath:fullPath moduleConfig:moduleConfig];
-        viewController = [self viewControllerWithItem:routerItem params:params];
     }
+    viewController = [self viewControllerWithItem:routerItem params:params];
     if (viewController) {
         //解析 URL 中的传参
         NSDictionary *URLParam = [URL sn_query];
@@ -134,9 +132,11 @@ static SNRouteManger *instance = nil;
         //夸界面传参  待实现
         
     }
+    if (block) {
+        block(routerItem);
+    }
     return viewController;
 }
-
 
 
 #pragma mark - setter/getter
@@ -155,13 +155,13 @@ static SNRouteManger *instance = nil;
 - (SNRouterItem *)routerItemWithURLPath:(NSString *)path moduleConfig:(SNModuleConfig *)config
 {
     SNRouterItem *routerItem = nil;
-    routerItem = [self.routerItemCache valueForKey:path];
+    routerItem = [self.routerItemCache objectForKey:path];
     if (routerItem) {
         return routerItem;
     }
     for (SNRouterItem *item in config.routerList) {
-        if ([path caseInsensitiveCompare:item.name]) { //不区分大小写
-            [self.routerItemCache setValue:item forKey:path];
+        if ([path caseInsensitiveCompare:item.name] == NSOrderedSame) { //不区分大小写
+            [self.routerItemCache setObject:item forKey:path];
             routerItem = item;
             break;
         }
@@ -197,7 +197,8 @@ static SNRouteManger *instance = nil;
     }
 }
 
-- (NSString*)nibFileWithClass:(Class)class {
+- (NSString*)nibFileWithClass:(Class)class
+{
     BOOL nibFileExist = ([[NSBundle mainBundle] pathForResource:NSStringFromClass(class) ofType:@"nib"] != nil);
     //如果没有对应的nib，但是父类不是UIViewController，则继续查找替用父类的nib
     if (nibFileExist == NO

@@ -38,6 +38,7 @@ static SNMediator *instance = nil;
     return instance;
 }
 
+
 #pragma mark - public
 - (BOOL)registerAllModules
 {
@@ -77,21 +78,12 @@ static SNMediator *instance = nil;
             if (self.modulesConfigDict[moduleConfig.name]) {
                 SNAssert(NO,@"注册错误, 已经存在模块: %@",moduleConfig.name);
             }
-            [self.modulesConfigDict setValue:moduleConfig forKey:moduleConfig.name];
+            [self.modulesConfigDict setValue:moduleConfig forKey:[moduleConfig.name lowercaseString]];
         }
         return YES;
     }
     return NO;
 }
-
-
-
-
-
-
-
-
-
 
 
 #pragma mark - getter

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)registerRouters:(NSDictionary *)modulesDict;
 
 - (BOOL)canOpenURL:(NSURL *)URL;
-- (BOOL)openURL:(NSURL *)URL withParams:(NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))completion;
+- (BOOL)openURL:(NSURL *)URL withParams:(nullable NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))completion;
 
 - (UIViewController *)viewControllerForURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (SNRouterItem  *routerItem))block;
 

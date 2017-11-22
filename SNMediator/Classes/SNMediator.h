@@ -6,9 +6,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSURL+SNMediator.h"
+#import "SNMediatorMacro.h"
+#import "SNRouteManger.h"
+#import "SNServiceManger.h"
 
 @interface SNMediator : NSObject
 
 + (instancetype)shareInstance;
+
+- (BOOL)registerAllModules;
 
 @end

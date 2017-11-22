@@ -39,6 +39,7 @@ static SNServiceManger *instance = nil;
     return instance;
 }
 
+
 #pragma mark - public
 - (BOOL)registerServices:(NSDictionary *)modulesDict
 {
@@ -78,6 +79,7 @@ static SNServiceManger *instance = nil;
     }
     return implInstance;
 }
+
 
 #pragma mark - private
 - (BOOL)registerService:(NSString *)serviceName class:(NSString *)serviceClassStr protocol:(NSString *)serviceProtocolStr

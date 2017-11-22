@@ -10,6 +10,7 @@
 #import "NSObject+SNTargetAction.h"
 #import "SNTestModel.h"
 #import "NSURL+SNMediator.h"
+#import "SNMediator.h"
 
 @interface SNViewController ()
 
@@ -21,29 +22,18 @@
 {
     [super viewDidLoad];
     
-    NSMutableDictionary *params = @{}.mutableCopy;
-    [params setValue:@(12) forKey:@"age"];
-    [params setValue:@"杨洁" forKey:@"name"];
-    id testModel = [[SNTestModel alloc] init];
-    [testModel sn_setParams:params];
-    
-    NSURL *URL = [NSURL URLWithString:@"snow://videoModule/sponsor//?roomid=1002&sid=10000&patient=yangjie"];
-    NSString *path = URL.path;
-    if ([path hasSuffix:@"/"]) {
-        path = [path substringToIndex:path.length-1];
-    }
-    if ([path hasPrefix:@"/"]) {
-        path = [path substringFromIndex:1];
-    }
-    NSLog(@"%@",URL);
-    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)testRoute:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[SNRouteManger shareInstance] openURL:SNURL(@"testModule/vcone") withParams:nil completion:NULL];
+}
+
+- (IBAction)testService:(id)sender
+{
+    
+    
 }
 
 @end

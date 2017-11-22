@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SNTestViewController1">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="testVC1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-gd-WKz">
+                    <rect key="frame" x="0.0" y="100" width="375" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="w9J-ps-S23"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.68355038580000005" green="0.82262869319999998" blue="0.81009516739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6q-Ek-BWB">
+                    <rect key="frame" x="127" y="240" width="120" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="tM9-Ym-qgm"/>
+                    </constraints>
+                    <state key="normal" title="push VC2"/>
+                    <connections>
+                        <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="RUt-Ez-kFO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4gh-gd-WKz" secondAttribute="trailing" id="0Da-cU-UAI"/>
+                <constraint firstItem="r6q-Ek-BWB" firstAttribute="height" secondItem="4gh-gd-WKz" secondAttribute="height" id="3U8-QQ-zm4"/>
+                <constraint firstItem="4gh-gd-WKz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Bp-op-TII"/>
+                <constraint firstItem="4gh-gd-WKz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="A0N-76-1ph"/>
+                <constraint firstItem="r6q-Ek-BWB" firstAttribute="centerX" secondItem="4gh-gd-WKz" secondAttribute="centerX" id="d0N-SR-QeX"/>
+                <constraint firstItem="r6q-Ek-BWB" firstAttribute="top" secondItem="4gh-gd-WKz" secondAttribute="bottom" constant="100" id="tqO-Xg-fzD"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
