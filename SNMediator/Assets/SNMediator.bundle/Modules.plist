@@ -37,7 +37,16 @@
 			</dict>
 		</array>
 		<key>serviceList</key>
-		<array/>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>sayHello</string>
+				<key>protocol</key>
+				<string>SNTestProtocol</string>
+				<key>className</key>
+				<string>SNImplementationClass</string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

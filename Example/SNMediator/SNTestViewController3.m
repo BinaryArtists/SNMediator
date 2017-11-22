@@ -37,7 +37,7 @@
 
 - (IBAction)buttonClicked:(id)sender
 {
-    [[SNRouteManger shareInstance] openURL:SNURL(@"testModule/vcthree") withParams:nil completion:NULL];
+    
 }
 
 @end

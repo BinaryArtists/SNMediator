@@ -32,8 +32,7 @@
 
 - (IBAction)testService:(id)sender
 {
-    
-    
+    [[[SNServiceManger shareInstance] getService:@"testModule/sayHello"] performAction:@"sayHello"];
 }
 
 @end

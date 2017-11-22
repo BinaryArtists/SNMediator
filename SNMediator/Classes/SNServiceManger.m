@@ -9,11 +9,12 @@
 #import "SNMediatorMacro.h"
 #import "SNModuleConfig.h"
 #import "SNServiceItem.h"
+#import "SNServiceProtocol.h"
 
 @interface SNServiceManger ()
 @property (strong, nonatomic) NSDictionary<NSString *,SNModuleConfig *> *modulesConfigDict; //所有模块配置集合，以模块名为key，SNModuleConfig对象为value
-@property (strong, nonatomic) NSMutableDictionary *serviceImplClassDict; //存放实现协议的类，name为key，serviceClass为value
-@property (strong, nonatomic) NSMutableDictionary *serviceImplInstanceCacheDict; //缓存实现协议的类的实例 (获取服务时，创建对象，缓存在这里，下次用到直接查找，找不到再新建) serviceClass为key，serviceClass的实例对象为value
+@property (strong, nonatomic) NSMutableDictionary *serviceImplClassDict; //存放实现协议的类，"模块名/服务名"为key，实现服务的类的名字为value
+@property (strong, nonatomic) NSMutableDictionary *serviceImplInstanceCacheDict; //缓存实现协议的类的实例 (获取服务时，创建对象，缓存在这里，下次用到直接查找，找不到再新建) implClass为key，implClass类的实例对象为value
 @property (strong, nonatomic) NSRecursiveLock *lock;
 
 @end
@@ -48,14 +49,8 @@ static SNServiceManger *instance = nil;
     }
     _modulesConfigDict = (NSDictionary<NSString *,SNModuleConfig *> *)modulesDict;
     NSArray<SNModuleConfig *> *moduleConfigArr = _modulesConfigDict.allValues;
-    NSMutableArray *tempArr = [NSMutableArray array];
-    [self.lock lock];
     for (SNModuleConfig *config in moduleConfigArr) {
-        [tempArr addObjectsFromArray:config.serviceList];
-    }
-    [self.lock unlock];
-    for (SNServiceItem *item in tempArr) {
-        BOOL sucess = [self registerService:item.name class:item.className protocol:item.protocol];
+        BOOL sucess = [self registerModule:config.name serviceList:config.serviceList];
         if (!sucess) {
             return NO;
         }
@@ -74,6 +69,18 @@ static SNServiceManger *instance = nil;
     id implInstance = [self.serviceImplInstanceCacheDict objectForKey:NSStringFromClass(implClass)];
     //如果服务存在，检查服务是否启动，如果未启动，马上启动，并返回service实例
     if (!implInstance) {
+        //实现类如果是单例
+        if ([[implClass class] respondsToSelector:@selector(singleton)]) {
+            if ([[implClass class] singleton]) {
+                if ([[implClass class] respondsToSelector:@selector(shareInstance)]) {
+                    implInstance = [[implClass class] shareInstance];
+                }else {
+                    implInstance = [[implClass alloc] init];
+                }
+                [self.serviceImplInstanceCacheDict setValue:implInstance forKey:NSStringFromClass(implClass)];
+                return implInstance;
+            }
+        }
         implInstance = [[implClass alloc] init];
         [self.serviceImplInstanceCacheDict setValue:implInstance forKey:NSStringFromClass(implClass)];
     }
@@ -81,7 +88,38 @@ static SNServiceManger *instance = nil;
 }
 
 
+#pragma mark - getter
+- (NSMutableDictionary *)serviceImplClassDict
+{
+    if (!_serviceImplClassDict) {
+        _serviceImplClassDict = [NSMutableDictionary dictionary];
+    }
+    return _serviceImplClassDict;
+}
+
+- (NSMutableDictionary *)serviceImplInstanceCacheDict
+{
+    if (!_serviceImplInstanceCacheDict) {
+        _serviceImplInstanceCacheDict = [NSMutableDictionary dictionary];
+    }
+    return _serviceImplInstanceCacheDict;
+}
+
+
 #pragma mark - private
+- (BOOL)registerModule:(NSString *)moduleName serviceList:(NSArray<SNServiceItem *> *)serviceList
+{
+    NSString *temp = [moduleName stringByAppendingString:@"/"];
+    for (SNServiceItem *item in serviceList) {
+        BOOL sucess = [self registerService:[temp stringByAppendingString:item.name] class:item.className protocol:item.protocol];
+        if (!sucess) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+//serviceName 由 "模块名/服务名" 组成
 - (BOOL)registerService:(NSString *)serviceName class:(NSString *)serviceClassStr protocol:(NSString *)serviceProtocolStr
 {
     Class serviceClass = nil;
@@ -100,13 +138,13 @@ static SNServiceManger *instance = nil;
     }
     //如果 class 在bundle中不存在，不注册该服务
     if (serviceClass && serviceProtocol && [serviceClass conformsToProtocol:serviceProtocol]) {
-        if ([self.serviceImplClassDict objectForKey:[serviceName lowercaseString]] != nil) {
+        if ([self.serviceImplClassDict valueForKey:[serviceName lowercaseString]] != nil) {
             //注册的时候给予提醒，不允许相同服务名称进行注册，不区分大小写，有重复不予覆盖
             SNAssert(NO, @"service: %@ duplicate register service", serviceName);
             return NO;
         } else {
             [self.lock lock];
-            [self.serviceImplClassDict setObject:serviceClass forKey:[serviceName lowercaseString]];
+            [self.serviceImplClassDict setValue:serviceClass forKey:[serviceName lowercaseString]];
             [self.lock unlock];
         }
     }
@@ -119,7 +157,6 @@ static SNServiceManger *instance = nil;
     }
     return YES;
 }
-
 
 
 @end

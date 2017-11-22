@@ -114,6 +114,7 @@ static SNRouteManger *instance = nil;
         return [self viewControllerForURL:SNURL(@"appbase/webbrowser") params:mParams completion:block];
     }
     
+    //local URL
     //优先匹配host与模块名相同的情况
     NSString *host = URL.sn_host;
     NSString *path = URL.sn_path;
@@ -144,7 +145,7 @@ static SNRouteManger *instance = nil;
 {
     if (!_routerItemCache) {
         _routerItemCache = [[NSCache alloc] init];
-        _routerItemCache.countLimit = 400;
+        _routerItemCache.countLimit = 200;
     }
     return _routerItemCache;
 }
@@ -207,9 +208,6 @@ static SNRouteManger *instance = nil;
     }
     return nibFileExist?NSStringFromClass(class):nil;
 }
-
-
-
 
 
 @end

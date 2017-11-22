@@ -48,12 +48,12 @@
         list = serviceList;
     }
     NSMutableArray *tempServiceList = [NSMutableArray array];
-    [list enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[NSDictionary class]]) {
             [tempServiceList addObject:[SNServiceItem newWithDict:obj]];
         }
     }];
-    _routerList = tempServiceList;
+    _serviceList = tempServiceList;
 }
 
 
