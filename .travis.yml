@@ -4,7 +4,8 @@
 
 osx_image: xcode7.3
 language: objective-c
-xcode_project: SNMediator.xcworkspace
+xcode_project: SNMediator.xcodeproj
+xcode_scheme: SNMediator
 xcode_scheme: SNMediator-Example
 # cache: cocoapods
 podfile: Example/Podfile
@@ -15,4 +16,4 @@ before_install:
 
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/SNMediator.xcworkspace -scheme SNMediator-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint
+# - pod lib lint
