@@ -6,6 +6,15 @@
 [![Platform](https://img.shields.io/cocoapods/p/SNMediator.svg?style=flat)](http://cocoapods.org/pods/SNMediator)
 
 
+##0. 概述
+
+SNMediator 是用于 iOS 应用进行模块化拆分实践的通用实现方案，以 URL 的形式实现三端(iOS, Android, H5)统一的资源访问(页面跳转)，当本地页面出现问题时能够紧急更改为H5；以"服务"的形式实现模块间方法调用，解除类似 BeeHive 中各个模块对Protocol的耦合。
+
+##1. 基本架构
+
+
+![](/Users/yangjie/Desktop/未命名文件 (1).png)
+
 URL规则:
 
 URL 的一般格式为：scheme://host:port/path?query#fragment
