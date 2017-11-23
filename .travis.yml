@@ -4,7 +4,7 @@
 
 osx_image: xcode7.3
 language: objective-c
-xcode_workspace: SNMediator.xcworkspace # path to your xcodeproj folder
+xcodeproj: SNMediator.xcworkspace # path to your xcodeproj folder
 xcode_scheme: SNMediator_Example 
 # cache: cocoapods
 podfile: Example/Podfile
@@ -13,6 +13,6 @@ before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
 
-script:
-- xcodebuild -workspace SNMediator.xcworkspace -scheme SNMediator-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: xcodebuild -project SNMediator.xcodeproj [-alltargets] -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 # - pod lib lint
+
