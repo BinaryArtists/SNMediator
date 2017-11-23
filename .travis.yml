@@ -15,5 +15,5 @@ before_install:
 - pod install --project-directory=Example
 
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/SNMediator.xcworkspace -scheme SNMediator-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -xcodeproj Example/SNMediator.xcodeproj -scheme SNMediator-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
 # - pod lib lint
