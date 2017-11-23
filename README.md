@@ -6,11 +6,11 @@
 [![Platform](https://img.shields.io/cocoapods/p/SNMediator.svg?style=flat)](http://cocoapods.org/pods/SNMediator)
 
 
-##0. 概述
+## 0. 概述
 
 SNMediator 是用于 iOS 应用进行模块化拆分实践的通用实现方案，以 URL 的形式实现三端(iOS, Android, H5)统一的资源访问(页面跳转)，当本地页面出现问题时能够紧急更改为H5；以"服务"的形式实现模块间方法调用，解除类似 BeeHive 中各个模块对Protocol的耦合。
 
-##1. 基本架构
+## 1. 基本架构
 
 
 ![基本架构](http://upload-images.jianshu.io/upload_images/2118879-8baf638048dfb0b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -18,7 +18,7 @@ SNMediator 是用于 iOS 应用进行模块化拆分实践的通用实现方案�
 所有页面的跳转都统一使用URL进行访问，模块暴露给外部调用的方法，叫做服务，模块间方法调用都以“服务”的方式进行。
 
 
-##2. 实现特性
+## 2. 实现特性
 
 
 - 所有页面跳转都使用URL，模块间方法调用使用定义好的"服务名"
@@ -31,7 +31,7 @@ SNMediator 是用于 iOS 应用进行模块化拆分实践的通用实现方案�
 待实现：夸界面传参
 	
 			
-##3. URL规则
+## 3. URL规则
 
 
 URL 的一般格式为：`scheme://host:port/path?query#fragment`
@@ -58,7 +58,7 @@ fragment  信息片断，字符串，用于指定网络资源中的片断。例�
 
 模块间方法调用: 使用 target - action 形式(解除了模块对 protocol 的依赖)。给模块暴露出来的接口定义相应的服务名，调用时使用 "模块名/服务名" 进行服务调用。
 
-##4. 模块注册
+## 4. 模块注册
 
 仅提供一种模块注册方式：通过配置本地 plist 文件进行注册。在app启动时调用   
 
@@ -76,7 +76,7 @@ fragment  信息片断，字符串，用于指定网络资源中的片断。例�
 
 
 
-## 使用
+## 5. 使用
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
@@ -152,7 +152,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```
 
 
-## Installation
+## 集成方式
 
 SNMediator is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -166,7 +166,7 @@ pod 'SNMediator'
 
 
 
-## Author
+## 作者
 
 yangjie2, 987537564@qq.com
 
