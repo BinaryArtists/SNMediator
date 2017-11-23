@@ -20,7 +20,7 @@ DerivedData
 *.ipa
 *.xcscheme
 Example/Pods
-Podfile.lock
+
 
 # Bundler
 .bundle
