@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSObject+SNTargetAction.h"
+#import "SNServiceProtocol.h"
 
 //负责方法(服务)调用
 NS_ASSUME_NONNULL_BEGIN

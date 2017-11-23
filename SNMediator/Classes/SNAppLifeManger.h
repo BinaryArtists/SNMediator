@@ -6,8 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SNAppDelegate.h"
 #import "NSObject+SNTargetAction.h"
+#import "SNApplicationDelegate.h"
 @class SNModuleConfig;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)registerAppLife:(NSDictionary<NSString *,SNModuleConfig *> *)modulesDict;
 
-- (void)performDelegateSelector:(SEL)selector, ...;
-- (void)performDelegateBlock:(void(^)(id<SNAppDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...;
+- (void)transmitAppDelegate:(SEL)selector, ...;
+- (void)transmitAppDelegateBlock:(void(^)(id<SNApplicationDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...;
 @end
 NS_ASSUME_NONNULL_END

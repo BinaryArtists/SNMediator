@@ -12,88 +12,64 @@
 #import "SNServiceManger.h"
 #import "SNAppLifeManger.h"
 
-@interface SNMediator()
-@property (strong, nonatomic) NSMutableDictionary<NSString *,SNModuleConfig *> *modulesConfigDict;//所有模块配置集合，以模块名为key，SNModuleConfig对象为value
-@property (strong, nonatomic) NSRecursiveLock *lock;
-
-@end
-
 @implementation SNMediator
-static SNMediator *instance = nil;
-+ (instancetype)shareInstance
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[SNMediator alloc] init];
-    });
-    return instance;
-}
-
-+ (instancetype)allocWithZone:(struct _NSZone *)zone
-{
-    static dispatch_once_t once;
-    dispatch_once(&once, ^{
-        instance = [super allocWithZone:zone];
-    });
-    return instance;
-}
-
 
 #pragma mark - public
-- (BOOL)registerAllModules
++ (BOOL)registerAllModules
 {
-    BOOL flag1 = [self loadLocalModules];
-    [[SNAppLifeManger shareInstance] registerAppLife:_modulesConfigDict];
-    BOOL flag2 = [[SNRouteManger shareInstance] registerRouters:_modulesConfigDict];
-    BOOL flag3 = [[SNServiceManger shareInstance] registerServices:_modulesConfigDict];
-    return flag1&&flag2&&flag3;
+   return [[self class] loadLocalModules];
 }
 
++ (BOOL)routeURL:(NSURL *)URL
+{
+    return [[SNRouteManger shareInstance] openURL:URL withParams:nil completion:NULL];
+}
 
++ (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params
+{
+    return [[SNRouteManger shareInstance] openURL:URL withParams:params completion:NULL];
+}
 
++ (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void(^ _Nullable)(id _Nullable result))completion
+{
+    return [[SNRouteManger shareInstance] openURL:URL withParams:params completion:completion];
+}
 
-
-
-
-
-
-
++ (nullable id)getService:(NSString *)serviceName
+{
+    return [[SNServiceManger shareInstance] getService:serviceName];
+}
 
 
 #pragma mark - private
 //加载本地 plist 文件中配置的所有模块，生成对应的模块配置数据并保存在 modulesConfigDict 中
-- (BOOL)loadLocalModules
++ (BOOL)loadLocalModules
 {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SNMediator.bundle/Modules" ofType:@"plist"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
         return NO;
     }
     NSArray *plistArr = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    NSMutableDictionary *tempModulesConfigDict = [NSMutableDictionary dictionary];
     if (plistArr&&[plistArr isKindOfClass:[NSArray class]]) {
         for (NSDictionary * configDict in plistArr) {
             SNModuleConfig *moduleConfig = [SNModuleConfig newWithDict:configDict];
             if (!moduleConfig.name) {
-                return NO;
+                SNAssert(NO,@"注册错误, 模块名为空");
             }
-            if (self.modulesConfigDict[moduleConfig.name]) {
+            if (tempModulesConfigDict[moduleConfig.name]) {
                 SNAssert(NO,@"注册错误, 已经存在模块: %@",moduleConfig.name);
             }
-            [self.modulesConfigDict setValue:moduleConfig forKey:[moduleConfig.name lowercaseString]];
+            [tempModulesConfigDict setValue:moduleConfig forKey:[moduleConfig.name lowercaseString]];
         }
-        return YES;
+        [[SNAppLifeManger shareInstance] registerAppLife:tempModulesConfigDict];
+        BOOL flag1 = [[SNRouteManger shareInstance] registerRouters:tempModulesConfigDict];
+        BOOL flag2 = [[SNServiceManger shareInstance] registerServices:tempModulesConfigDict];
+        return flag1&&flag2;
     }
     return NO;
 }
 
-
-#pragma mark - getter
-- (NSMutableDictionary<NSString *,SNModuleConfig *> *)modulesConfigDict
-{
-    if (!_modulesConfigDict) {
-        _modulesConfigDict = [NSMutableDictionary dictionaryWithCapacity:4];
-    }
-    return _modulesConfigDict;
-}
 
 
 @end

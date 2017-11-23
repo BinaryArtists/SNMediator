@@ -8,7 +8,7 @@
 		<key>scheme</key>
 		<string>snow</string>
 		<key>delegateClass</key>
-		<string></string>
+		<string>SNTestModuleAppDelegate</string>
 		<key>routerList</key>
 		<array>
 			<dict>

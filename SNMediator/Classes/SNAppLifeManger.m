@@ -10,7 +10,7 @@
 #import "NSObject+SNTargetAction.h"
 
 @interface SNAppLifeManger ()
-@property (nonatomic, strong) NSMutableSet<id <SNAppDelegate>> *moduleDelegateInstanceSet; //存放moduleDelegate实例对象
+@property (nonatomic, strong) NSMutableSet<id <SNApplicationDelegate>> *moduleDelegateInstanceSet; //存放moduleDelegate实例对象
 
 @end
 
@@ -41,16 +41,16 @@ static SNAppLifeManger *instance = nil;
     [moduleConfigArr enumerateObjectsUsingBlock:^(SNModuleConfig * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.delegateClass) {
             Class delegateClass = NSClassFromString(obj.delegateClass);
-            if (delegateClass&&[delegateClass conformsToProtocol:@protocol(SNAppDelegate)]) {
+            if (delegateClass&&[delegateClass conformsToProtocol:@protocol(SNApplicationDelegate)]) {
                 [self.moduleDelegateInstanceSet addObject:[[delegateClass alloc] init]];
             }
         }
     }];
 }
 
-- (void)performDelegateSelector:(SEL)selector, ...
+- (void)transmitAppDelegate:(SEL)selector, ...
 {
-    for (id<SNAppDelegate> moduleDelegateInstance in self.moduleDelegateInstanceSet) {
+    for (id<SNApplicationDelegate> moduleDelegateInstance in self.moduleDelegateInstanceSet) {
         if ([moduleDelegateInstance respondsToSelector:selector]&&[moduleDelegateInstance isKindOfClass:[NSObject class]]) {
             va_list args;
             va_start(args, selector);
@@ -67,10 +67,10 @@ static SNAppLifeManger *instance = nil;
     }
 }
 
-- (void)performDelegateBlock:(void(^)(id<SNAppDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...
+- (void)transmitAppDelegateBlock:(void(^)(id<SNApplicationDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...
 {
     BOOL stop = NO;
-    for (id<SNAppDelegate> moduleDelegateInstance in self.moduleDelegateInstanceSet) {
+    for (id<SNApplicationDelegate> moduleDelegateInstance in self.moduleDelegateInstanceSet) {
         if ([moduleDelegateInstance respondsToSelector:selector]&&[moduleDelegateInstance isKindOfClass:[NSObject class]]) {
             va_list args;
             va_start(args, selector);
@@ -92,12 +92,12 @@ static SNAppLifeManger *instance = nil;
 }
 
 #pragma mark - setter
-- (NSMutableSet<id<SNAppDelegate>> *)moduleDelegateInstanceSet
+- (NSMutableSet<id<SNApplicationDelegate>> *)moduleDelegateInstanceSet
 {
     if (!_moduleDelegateInstanceSet) {
         _moduleDelegateInstanceSet = [[NSMutableSet alloc] initWithCapacity:4];
     }
-    return _moduleDelegateInstanceSet;
+    return (NSMutableSet<id<SNApplicationDelegate>> *)_moduleDelegateInstanceSet;
 }
 
 

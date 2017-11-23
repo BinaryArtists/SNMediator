@@ -13,7 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[SNMediator shareInstance] registerAllModules];
+    [SNMediator  registerAllModules];
+    [[SNAppLifeManger shareInstance] transmitAppDelegate:_cmd, application, launchOptions];
     return YES;
 }
 

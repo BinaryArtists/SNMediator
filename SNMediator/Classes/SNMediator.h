@@ -10,11 +10,20 @@
 #import "SNMediatorMacro.h"
 #import "SNRouteManger.h"
 #import "SNServiceManger.h"
+#import "SNAppLifeManger.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @interface SNMediator : NSObject
 
-+ (instancetype)shareInstance;
++ (BOOL)registerAllModules;
 
-- (BOOL)registerAllModules;
++ (BOOL)routeURL:(NSURL *)URL;
+
++ (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params;
+
++ (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void(^ _Nullable)(id _Nullable result))completion;
+
++ (nullable id)getService:(NSString *)serviceName;
 
 @end
+NS_ASSUME_NONNULL_END
