@@ -4,9 +4,8 @@
 
 osx_image: xcode7.3
 language: objective-c
-xcode_project: Example/SNMediator.xcodeproj
-xcode_scheme: 
-  
+xcode_workspace: Example/SNMediator.xcworkspace # path to your xcodeproj folder
+xcode_scheme: SNMediator-Example
 # cache: cocoapods
 podfile: Example/Podfile
 
@@ -15,4 +14,5 @@ before_install:
 - pod install --project-directory=Example
 
 script:
+- xcodebuild -workspace SNMediator.xcworkspace -scheme SNMediator-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 # - pod lib lint
