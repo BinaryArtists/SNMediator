@@ -5,13 +5,14 @@
 Pod::Spec.new do |s|
   s.name             = 'SNMediator'
   s.version          = '0.1.3'
-  s.summary          = 'SNMediator is a lightweight implementation plan for iOS applications to be modularized. 
-    By Using "URL" to implement the unified resource access method of the three terminals (iOS, Android, H5), when a bug occurred, you can easily change native pages to H5 urgently, instead of JSPath;
-    It implemented  function invocation in the form of "service" among modules , removed the dependency of the module on "procotol" like in BeeHive.'
+  s.summary          = 'SNMediator is a solution for iOS Application modularizing program.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+    SNMediator is a flexible mediator for iOS applications that will be modularized. 
+    By Using "URL" to implement the unified resource access method of the three terminals (iOS, Android, H5).
+    When bugs occurred, you can easily change native pages to H5 urgently.
+    It does  function invocation in the form of "service" among modules , removed the dependency on "procotol"  among modules like in BeeHive.                       
+DESC
 
   s.homepage         = 'https://github.com/yangjie2/SNMediator'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
