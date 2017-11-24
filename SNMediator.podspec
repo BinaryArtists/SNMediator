@@ -17,6 +17,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'yangjie2' => '987537564@qq.com' }
   s.source           = { :git => 'https://github.com/yangjie2/SNMediator.git', :tag => s.version.to_s }
+  s.requires_arc = true
 
   s.ios.deployment_target = '8.0'
 

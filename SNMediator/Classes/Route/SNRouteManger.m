@@ -172,10 +172,12 @@ static SNRouteManger *instance = nil;
 
 - (UIViewController *)viewControllerWithItem:(SNRouterItem *)item params:(NSDictionary *)params
 {
-    if (!item) {
-        return nil;
-    }
     UIViewController *viewController = nil;
+    if (!item) {
+        //页面不存在，生成错误页面
+        viewController = [[SNErrorViewController alloc] init];
+        return viewController;
+    }
     Class class = NSClassFromString(item.className);
     if (!class||![class isSubclassOfClass:[UIViewController class]]) {
         //页面不存在，生成错误页面
@@ -194,7 +196,9 @@ static SNRouteManger *instance = nil;
         }
         return viewController;
     }else {
-        return nil;
+        //页面不存在，生成错误页面
+        viewController = [[SNErrorViewController alloc] init];
+        return viewController;
     }
 }
 

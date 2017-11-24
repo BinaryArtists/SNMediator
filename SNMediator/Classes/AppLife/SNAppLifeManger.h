@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)registerAppLife:(NSDictionary<NSString *,SNModuleConfig *> *)modulesDict;
 
-- (void)transmitAppDelegate:(SEL)selector, ...;
-- (void)transmitAppDelegateBlock:(void(^)(id<SNApplicationDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...;
+- (void)forwardAppDelegate:(SEL)selector, ...;
+- (void)forwardAppDelegateBlock:(void(^)(id<SNApplicationDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...;
 @end
 NS_ASSUME_NONNULL_END

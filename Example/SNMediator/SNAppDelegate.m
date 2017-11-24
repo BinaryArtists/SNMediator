@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [SNMediator  registerAllModules];
-    [[SNAppLifeManger shareInstance] transmitAppDelegate:_cmd, application, launchOptions];
+    [[SNAppLifeManger shareInstance] forwardAppDelegate:_cmd, application, launchOptions];
     return YES;
 }
 

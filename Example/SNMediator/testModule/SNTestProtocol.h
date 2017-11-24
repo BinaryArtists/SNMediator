@@ -11,6 +11,6 @@
 
 @protocol SNTestProtocol <SNServiceProtocol>
 
-- (void)sayHello;
+- (NSString *)sayHello;
 
 @end

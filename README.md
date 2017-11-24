@@ -87,7 +87,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 {
 	
     [SNMediator registerAllModules]; //注册模块
-    [[SNAppLifeManger shareInstance] transmitAppDelegate:_cmd, application, launchOptions]; //转发该事件到各个模块
+    [[SNAppLifeManger shareInstance] forwardAppDelegate:_cmd, application, launchOptions]; //转发该事件到各个模块
     return YES;
 }
 

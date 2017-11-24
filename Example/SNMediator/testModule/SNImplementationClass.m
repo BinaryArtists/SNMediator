@@ -10,9 +10,10 @@
 
 @implementation SNImplementationClass
 
-- (void)sayHello
+- (NSString *)sayHello
 {
     NSLog(@"Hello world.");
+    return @"Hello world.";
 }
 
 @end

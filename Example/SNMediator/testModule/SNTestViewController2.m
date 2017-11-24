@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"vcTwo";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -37,7 +38,12 @@
 
 - (IBAction)buttonClicked:(id)sender
 {
-    [[SNRouteManger shareInstance] openURL:SNURL(@"testModule/vcthree") withParams:nil completion:NULL];
+    [SNMediator routeURL:SNURL(@"testModule/vcthree") params:nil];
+}
+
+- (IBAction)pushNonexistentVC:(id)sender
+{
+    [SNMediator routeURL:SNURL(@"testModule/nonexistent") params:nil];
 }
 
 @end

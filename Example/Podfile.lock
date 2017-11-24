@@ -1,5 +1,5 @@
 PODS:
-  - SNMediator (0.1.1)
+  - SNMediator (0.1.2)
 
 DEPENDENCIES:
   - SNMediator (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SNMediator: 1358bbf08524c6f739a3b17e6fd88ddf0bd3fc06
+  SNMediator: d2ca8ef4655f5f7a0644309abf0f804e1d74359d
 
 PODFILE CHECKSUM: c7e0dd02b651e656f637ca7d717f31fde20bb5d0
 

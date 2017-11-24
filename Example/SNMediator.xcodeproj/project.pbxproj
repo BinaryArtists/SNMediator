@@ -23,15 +23,14 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		AE5A516A1FC50A6D004A205D /* SNTestViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A51681FC50A6D004A205D /* SNTestViewController1.m */; };
-		AE5A516B1FC50A6D004A205D /* SNTestViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5A51691FC50A6D004A205D /* SNTestViewController1.xib */; };
-		AE5A516F1FC51066004A205D /* SNTestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A516D1FC51066004A205D /* SNTestViewController2.m */; };
-		AE5A51701FC51066004A205D /* SNTestViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5A516E1FC51066004A205D /* SNTestViewController2.xib */; };
-		AE5A51741FC510ED004A205D /* SNTestViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A51721FC510ED004A205D /* SNTestViewController3.m */; };
-		AE5A51751FC510ED004A205D /* SNTestViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5A51731FC510ED004A205D /* SNTestViewController3.xib */; };
-		AE5A517A1FC56339004A205D /* SNImplementationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A51791FC56339004A205D /* SNImplementationClass.m */; };
-		AE5A517D1FC6C364004A205D /* SNTestModuleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A517C1FC6C364004A205D /* SNTestModuleAppDelegate.m */; };
-		AEC04A891FADFFB300714309 /* SNTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC04A881FADFFB300714309 /* SNTestModel.m */; };
+		AE5A51A81FC7C4A3004A205D /* SNTestViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5A519A1FC7C4A3004A205D /* SNTestViewController1.xib */; };
+		AE5A51A91FC7C4A3004A205D /* SNImplementationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A519C1FC7C4A3004A205D /* SNImplementationClass.m */; };
+		AE5A51AA1FC7C4A3004A205D /* SNTestViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5A519D1FC7C4A3004A205D /* SNTestViewController3.xib */; };
+		AE5A51AB1FC7C4A3004A205D /* SNTestModuleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A519E1FC7C4A3004A205D /* SNTestModuleAppDelegate.m */; };
+		AE5A51AC1FC7C4A3004A205D /* SNTestViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5A519F1FC7C4A3004A205D /* SNTestViewController2.xib */; };
+		AE5A51AD1FC7C4A3004A205D /* SNTestViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A51A21FC7C4A3004A205D /* SNTestViewController3.m */; };
+		AE5A51AE1FC7C4A3004A205D /* SNTestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A51A51FC7C4A3004A205D /* SNTestViewController2.m */; };
+		AE5A51AF1FC7C4A3004A205D /* SNTestViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A51A71FC7C4A3004A205D /* SNTestViewController1.m */; };
 		ECAA9FFFF88F08B7ACC60E24 /* libPods-SNMediator_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2676EEF50405F98728AD3 /* libPods-SNMediator_Example.a */; };
 /* End PBXBuildFile section */
 
@@ -73,22 +72,20 @@
 		6E81DEC545C5F0F7D47FECA5 /* Pods-SNMediator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNMediator_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNMediator_Tests/Pods-SNMediator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AE5A51671FC50A6D004A205D /* SNTestViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNTestViewController1.h; sourceTree = "<group>"; };
-		AE5A51681FC50A6D004A205D /* SNTestViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNTestViewController1.m; sourceTree = "<group>"; };
-		AE5A51691FC50A6D004A205D /* SNTestViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SNTestViewController1.xib; sourceTree = "<group>"; };
-		AE5A516C1FC51066004A205D /* SNTestViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNTestViewController2.h; sourceTree = "<group>"; };
-		AE5A516D1FC51066004A205D /* SNTestViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNTestViewController2.m; sourceTree = "<group>"; };
-		AE5A516E1FC51066004A205D /* SNTestViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SNTestViewController2.xib; sourceTree = "<group>"; };
-		AE5A51711FC510ED004A205D /* SNTestViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNTestViewController3.h; sourceTree = "<group>"; };
-		AE5A51721FC510ED004A205D /* SNTestViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNTestViewController3.m; sourceTree = "<group>"; };
-		AE5A51731FC510ED004A205D /* SNTestViewController3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SNTestViewController3.xib; sourceTree = "<group>"; };
-		AE5A51771FC561EA004A205D /* SNTestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTestProtocol.h; sourceTree = "<group>"; };
-		AE5A51781FC56339004A205D /* SNImplementationClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNImplementationClass.h; sourceTree = "<group>"; };
-		AE5A51791FC56339004A205D /* SNImplementationClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNImplementationClass.m; sourceTree = "<group>"; };
-		AE5A517B1FC6C364004A205D /* SNTestModuleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNTestModuleAppDelegate.h; sourceTree = "<group>"; };
-		AE5A517C1FC6C364004A205D /* SNTestModuleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNTestModuleAppDelegate.m; sourceTree = "<group>"; };
-		AEC04A871FADFFB300714309 /* SNTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNTestModel.h; sourceTree = "<group>"; };
-		AEC04A881FADFFB300714309 /* SNTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNTestModel.m; sourceTree = "<group>"; };
+		AE5A519A1FC7C4A3004A205D /* SNTestViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNTestViewController1.xib; sourceTree = "<group>"; };
+		AE5A519B1FC7C4A3004A205D /* SNTestViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTestViewController2.h; sourceTree = "<group>"; };
+		AE5A519C1FC7C4A3004A205D /* SNImplementationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNImplementationClass.m; sourceTree = "<group>"; };
+		AE5A519D1FC7C4A3004A205D /* SNTestViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNTestViewController3.xib; sourceTree = "<group>"; };
+		AE5A519E1FC7C4A3004A205D /* SNTestModuleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNTestModuleAppDelegate.m; sourceTree = "<group>"; };
+		AE5A519F1FC7C4A3004A205D /* SNTestViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNTestViewController2.xib; sourceTree = "<group>"; };
+		AE5A51A01FC7C4A3004A205D /* SNTestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTestProtocol.h; sourceTree = "<group>"; };
+		AE5A51A11FC7C4A3004A205D /* SNTestViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTestViewController1.h; sourceTree = "<group>"; };
+		AE5A51A21FC7C4A3004A205D /* SNTestViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNTestViewController3.m; sourceTree = "<group>"; };
+		AE5A51A31FC7C4A3004A205D /* SNTestModuleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTestModuleAppDelegate.h; sourceTree = "<group>"; };
+		AE5A51A41FC7C4A3004A205D /* SNImplementationClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNImplementationClass.h; sourceTree = "<group>"; };
+		AE5A51A51FC7C4A3004A205D /* SNTestViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNTestViewController2.m; sourceTree = "<group>"; };
+		AE5A51A61FC7C4A3004A205D /* SNTestViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTestViewController3.h; sourceTree = "<group>"; };
+		AE5A51A71FC7C4A3004A205D /* SNTestViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNTestViewController1.m; sourceTree = "<group>"; };
 		B336B06379F3DA4E77F9C57D /* Pods-SNMediator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNMediator_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNMediator_Example/Pods-SNMediator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DE32F230C4C091308C56097C /* Pods-SNMediator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNMediator_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNMediator_Example/Pods-SNMediator_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3ABF0D0C87522D072A3CFC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -168,6 +165,7 @@
 		6003F593195388D20070C39A /* Example for SNMediator */ = {
 			isa = PBXGroup;
 			children = (
+				AE5A51991FC7C4A3004A205D /* testModule */,
 				6003F59C195388D20070C39A /* SNAppDelegate.h */,
 				6003F59D195388D20070C39A /* SNAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -176,22 +174,6 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
-				AE5A517B1FC6C364004A205D /* SNTestModuleAppDelegate.h */,
-				AE5A517C1FC6C364004A205D /* SNTestModuleAppDelegate.m */,
-				AE5A51771FC561EA004A205D /* SNTestProtocol.h */,
-				AE5A51781FC56339004A205D /* SNImplementationClass.h */,
-				AE5A51791FC56339004A205D /* SNImplementationClass.m */,
-				AEC04A871FADFFB300714309 /* SNTestModel.h */,
-				AEC04A881FADFFB300714309 /* SNTestModel.m */,
-				AE5A51671FC50A6D004A205D /* SNTestViewController1.h */,
-				AE5A51681FC50A6D004A205D /* SNTestViewController1.m */,
-				AE5A51691FC50A6D004A205D /* SNTestViewController1.xib */,
-				AE5A516C1FC51066004A205D /* SNTestViewController2.h */,
-				AE5A516D1FC51066004A205D /* SNTestViewController2.m */,
-				AE5A516E1FC51066004A205D /* SNTestViewController2.xib */,
-				AE5A51711FC510ED004A205D /* SNTestViewController3.h */,
-				AE5A51721FC510ED004A205D /* SNTestViewController3.m */,
-				AE5A51731FC510ED004A205D /* SNTestViewController3.xib */,
 			);
 			name = "Example for SNMediator";
 			path = SNMediator;
@@ -235,6 +217,27 @@
 				FC3ABF0D0C87522D072A3CFC /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		AE5A51991FC7C4A3004A205D /* testModule */ = {
+			isa = PBXGroup;
+			children = (
+				AE5A51A01FC7C4A3004A205D /* SNTestProtocol.h */,
+				AE5A51A41FC7C4A3004A205D /* SNImplementationClass.h */,
+				AE5A519C1FC7C4A3004A205D /* SNImplementationClass.m */,
+				AE5A51A31FC7C4A3004A205D /* SNTestModuleAppDelegate.h */,
+				AE5A519E1FC7C4A3004A205D /* SNTestModuleAppDelegate.m */,
+				AE5A51A11FC7C4A3004A205D /* SNTestViewController1.h */,
+				AE5A51A71FC7C4A3004A205D /* SNTestViewController1.m */,
+				AE5A519A1FC7C4A3004A205D /* SNTestViewController1.xib */,
+				AE5A519B1FC7C4A3004A205D /* SNTestViewController2.h */,
+				AE5A51A51FC7C4A3004A205D /* SNTestViewController2.m */,
+				AE5A519F1FC7C4A3004A205D /* SNTestViewController2.xib */,
+				AE5A51A61FC7C4A3004A205D /* SNTestViewController3.h */,
+				AE5A51A21FC7C4A3004A205D /* SNTestViewController3.m */,
+				AE5A519D1FC7C4A3004A205D /* SNTestViewController3.xib */,
+			);
+			path = testModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,12 +326,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE5A51751FC510ED004A205D /* SNTestViewController3.xib in Resources */,
-				AE5A51701FC51066004A205D /* SNTestViewController2.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				AE5A51AC1FC7C4A3004A205D /* SNTestViewController2.xib in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				AE5A516B1FC50A6D004A205D /* SNTestViewController1.xib in Resources */,
+				AE5A51AA1FC7C4A3004A205D /* SNTestViewController3.xib in Resources */,
+				AE5A51A81FC7C4A3004A205D /* SNTestViewController1.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +421,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SNMediator_Example/Pods-SNMediator_Example-resources.sh",
 				"${PODS_ROOT}/../../SNMediator/Assets/SNMediator.bundle",
-				"${PODS_ROOT}/../../SNMediator/Classes/SNErrorViewController.xib",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -454,15 +456,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE5A516F1FC51066004A205D /* SNTestViewController2.m in Sources */,
 				6003F59E195388D20070C39A /* SNAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* SNViewController.m in Sources */,
-				AE5A516A1FC50A6D004A205D /* SNTestViewController1.m in Sources */,
-				AE5A51741FC510ED004A205D /* SNTestViewController3.m in Sources */,
-				AEC04A891FADFFB300714309 /* SNTestModel.m in Sources */,
+				AE5A51AB1FC7C4A3004A205D /* SNTestModuleAppDelegate.m in Sources */,
+				AE5A51AF1FC7C4A3004A205D /* SNTestViewController1.m in Sources */,
+				AE5A51AD1FC7C4A3004A205D /* SNTestViewController3.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				AE5A517D1FC6C364004A205D /* SNTestModuleAppDelegate.m in Sources */,
-				AE5A517A1FC56339004A205D /* SNImplementationClass.m in Sources */,
+				AE5A51AE1FC7C4A3004A205D /* SNTestViewController2.m in Sources */,
+				AE5A51A91FC7C4A3004A205D /* SNImplementationClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

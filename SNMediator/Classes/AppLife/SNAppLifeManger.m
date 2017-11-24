@@ -48,7 +48,7 @@ static SNAppLifeManger *instance = nil;
     }];
 }
 
-- (void)transmitAppDelegate:(SEL)selector, ...
+- (void)forwardAppDelegate:(SEL)selector, ...
 {
     for (id<SNApplicationDelegate> moduleDelegateInstance in self.moduleDelegateInstanceSet) {
         if ([moduleDelegateInstance respondsToSelector:selector]&&[moduleDelegateInstance isKindOfClass:[NSObject class]]) {
@@ -67,7 +67,7 @@ static SNAppLifeManger *instance = nil;
     }
 }
 
-- (void)transmitAppDelegateBlock:(void(^)(id<SNApplicationDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...
+- (void)forwardAppDelegateBlock:(void(^)(id<SNApplicationDelegate> appDelegateInstance, id result, BOOL *stop))block selector:(SEL)selector, ...
 {
     BOOL stop = NO;
     for (id<SNApplicationDelegate> moduleDelegateInstance in self.moduleDelegateInstanceSet) {
