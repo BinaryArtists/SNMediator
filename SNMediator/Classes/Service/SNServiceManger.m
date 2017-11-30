@@ -159,4 +159,14 @@ static SNServiceManger *instance = nil;
 }
 
 
+#pragma mark - getter
+- (NSRecursiveLock *)lock
+{
+    if (!_lock) {
+        _lock = [[NSRecursiveLock alloc] init];
+    }
+    return _lock;
+}
+
+
 @end
