@@ -78,6 +78,7 @@ static SNRouteManger *instance = nil;
     //判断是否需要登录
     if (item.needLogin) {
         //调出登录界面
+        
     }
     //显示
     UIViewController *currentVC = [UIViewController sn_currentViewController];
