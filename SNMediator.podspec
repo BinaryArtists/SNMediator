@@ -5,7 +5,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SNMediator'
   s.version          = '0.1.3'
-  s.summary          = 'SNMediator is a solution for iOS Application modularizing program.'
+  s.summary          = 'SNMediator is a solution for iOS Application module programs which is the bridge of communication between modules.'
 
   s.description      = <<-DESC
     SNMediator is a flexible mediator for iOS applications that will be modularized. 
