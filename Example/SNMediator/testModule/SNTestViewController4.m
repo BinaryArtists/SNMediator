@@ -35,11 +35,25 @@
 }
 */
 
-- (IBAction)backToSpecificVC:(id)sender
+- (IBAction)backToVCOne:(id)sender
 {
     [SNMediator routeBackToURL:SNURL(@"testModule/vcone") params:@{@"bgColor":[UIColor yellowColor]} completion:NULL];
 }
 
+- (IBAction)backToVCthree:(id)sender
+{
+    [SNMediator routeBackToURL:SNURL(@"testModule/vcthree") params:nil completion:NULL];
+}
+
+- (IBAction)backToVCTwo:(id)sender
+{
+    [SNMediator routeBackToURL:SNURL(@"testModule/vctwo") params:nil completion:NULL];
+}
+
+- (IBAction)backToRootTabBarSecondIndex:(id)sender
+{
+    [SNMediator routeBackToURL:SNURL(@"homeModule/rootVC1") params:nil completion:NULL];
+}
 
 
 @end

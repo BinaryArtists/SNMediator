@@ -37,16 +37,58 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="back to VCone 并逆向传参改变背景色"/>
                     <connections>
-                        <action selector="backToSpecificVC:" destination="-1" eventType="touchUpInside" id="MtL-Mk-j2g"/>
+                        <action selector="backToVCOne:" destination="-1" eventType="touchUpInside" id="qnM-El-KdJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfW-Dz-b7w">
+                    <rect key="frame" x="82" y="378.5" width="210" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="210" id="QLv-Nl-eVT"/>
+                        <constraint firstAttribute="height" constant="30" id="tN8-em-EtR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="back to VCthree"/>
+                    <connections>
+                        <action selector="backToVCthree:" destination="-1" eventType="touchUpInside" id="zTj-5Z-R12"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2y-lP-mXN">
+                    <rect key="frame" x="82" y="438.5" width="210" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="EmF-ug-Sbl"/>
+                        <constraint firstAttribute="width" constant="210" id="e5R-cL-o8X"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="back to VCtwo"/>
+                    <connections>
+                        <action selector="backToVCTwo:" destination="-1" eventType="touchUpInside" id="1FC-Cv-RWG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxF-jL-Div">
+                    <rect key="frame" x="62.5" y="498.5" width="250" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZDt-MG-W5r"/>
+                        <constraint firstAttribute="width" constant="250" id="yp0-ug-b1Y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="back to tabBarViewController second index"/>
+                    <connections>
+                        <action selector="backToRootTabBarSecondIndex:" destination="-1" eventType="touchUpInside" id="hbi-pm-egs"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="vEi-fA-wES" secondAttribute="trailing" id="2CF-kl-cDW"/>
+                <constraint firstItem="ZxF-jL-Div" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5g0-iX-n0P"/>
+                <constraint firstItem="F2y-lP-mXN" firstAttribute="top" secondItem="DfW-Dz-b7w" secondAttribute="bottom" constant="30" id="AfU-xt-suR"/>
+                <constraint firstItem="DfW-Dz-b7w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QmM-70-6Ch"/>
                 <constraint firstItem="Wfa-GE-Y34" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Sdp-bc-i0C"/>
+                <constraint firstItem="F2y-lP-mXN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Sml-UJ-lIN"/>
+                <constraint firstItem="ZxF-jL-Div" firstAttribute="top" secondItem="F2y-lP-mXN" secondAttribute="bottom" constant="30" id="Upn-TR-TMt"/>
                 <constraint firstItem="vEi-fA-wES" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="Ypa-Bl-yAD"/>
                 <constraint firstItem="vEi-fA-wES" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hXq-Su-fjL"/>
+                <constraint firstItem="DfW-Dz-b7w" firstAttribute="top" secondItem="Wfa-GE-Y34" secondAttribute="bottom" constant="30" id="rA4-6Y-L1B"/>
                 <constraint firstItem="vEi-fA-wES" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sxk-px-vMe"/>
                 <constraint firstItem="Wfa-GE-Y34" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uqC-IB-FIE"/>
             </constraints>

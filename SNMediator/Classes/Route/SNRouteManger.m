@@ -158,7 +158,9 @@ static SNRouteManger *instance = nil;
                         if (block) {
                             block(obj);
                         }
-                        [selectedNavigaVC dismissViewControllerAnimated:NO completion:NULL];
+                        if (selectedNavigaVC.presentedViewController) {
+                            [selectedNavigaVC dismissViewControllerAnimated:NO completion:NULL];
+                        }
                         [selectedNavigaVC popToViewController:obj animated:YES];
                         return;
                     }
@@ -170,9 +172,19 @@ static SNRouteManger *instance = nil;
                     if (block) {
                         block(selectedVC);
                     }
-                    [selectedVC dismissViewControllerAnimated:NO completion:NULL];
+                    if (selectedVC.presentedViewController) {
+                        [selectedVC dismissViewControllerAnimated:NO completion:NULL];
+                    }
                     return;
                 }
+            }
+            //选中的index视图栈内没有找到，则在其他index出查找
+            if (tabBarVC.presentedViewController) {
+                [tabBarVC dismissViewControllerAnimated:NO completion:NULL];
+            }
+            if ([tabBarVC.selectedViewController isKindOfClass:[UINavigationController class]]) {
+                UINavigationController *nav = (UINavigationController *)tabBarVC.selectedViewController;
+                [nav popToRootViewControllerAnimated:NO];
             }
             for (UIViewController *obj in tabBarVC.viewControllers) {
                 if ([obj isKindOfClass:[UINavigationController class]]) {
@@ -183,8 +195,7 @@ static SNRouteManger *instance = nil;
                         if (block) {
                             block(rootVC);
                         }
-                        [navigaVC dismissViewControllerAnimated:NO completion:NULL];
-                        [navigaVC popToViewController:rootVC animated:YES];
+                        [tabBarVC setSelectedViewController:navigaVC];
                         return;
                     }
                 }else if ([obj isKindOfClass:[UIViewController class]]) {
@@ -193,7 +204,9 @@ static SNRouteManger *instance = nil;
                         if (block) {
                             block(obj);
                         }
-                        [obj dismissViewControllerAnimated:NO completion:NULL];
+                        if (obj.presentedViewController) {
+                            [obj dismissViewControllerAnimated:NO completion:NULL];
+                        }
                         [tabBarVC setSelectedViewController:obj];
                         return;
                     }
@@ -207,7 +220,9 @@ static SNRouteManger *instance = nil;
                     if (block) {
                         block(objVC);
                     }
-                    [navigaVC dismissViewControllerAnimated:NO completion:NULL];
+                    if (navigaVC.presentedViewController) {
+                        [navigaVC dismissViewControllerAnimated:NO completion:NULL];
+                    }
                     [navigaVC popToViewController:objVC animated:YES];
                     return;
                 }
@@ -219,7 +234,9 @@ static SNRouteManger *instance = nil;
                 if (block) {
                     block(obj);
                 }
-                [obj dismissViewControllerAnimated:NO completion:NULL];
+                if (obj.presentedViewController) {
+                    [obj dismissViewControllerAnimated:NO completion:NULL];
+                }
                 return;
             } else continue;
 

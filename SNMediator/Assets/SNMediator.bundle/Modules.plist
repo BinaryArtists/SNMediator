@@ -56,5 +56,32 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>homeModule</string>
+		<key>scheme</key>
+		<string></string>
+		<key>delegateClass</key>
+		<string></string>
+		<key>routerList</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>rootVC0</string>
+				<key>className</key>
+				<string>SNViewController0</string>
+				<key>routeType</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>rootVC1</string>
+				<key>className</key>
+				<string>SNViewController1</string>
+				<key>routeType</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>
