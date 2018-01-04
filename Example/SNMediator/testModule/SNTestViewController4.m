@@ -1,23 +1,22 @@
 //
-//  SNTestViewController3.m
+//  SNTestViewController4.m
 //  SNMediator_Example
 //
-//  Created by 杨洁 on 2017/11/22.
-//  Copyright © 2017年 yangjie2. All rights reserved.
+//  Created by 杨洁 on 2018/1/3.
+//  Copyright © 2018年 yangjie2. All rights reserved.
 //
 
-#import "SNTestViewController3.h"
+#import "SNTestViewController4.h"
 #import "SNMediator.h"
 
-@interface SNTestViewController3 ()
+@interface SNTestViewController4 ()
 
 @end
 
-@implementation SNTestViewController3
+@implementation SNTestViewController4
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"vcThree";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -36,14 +35,9 @@
 }
 */
 
-- (IBAction)buttonClicked:(id)sender
+- (IBAction)backToSpecificVC:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (IBAction)pushToVC4:(id)sender
-{
-    [SNMediator routeURL:SNURL(@"testModule/vcfour")];
+    [SNMediator routeBackToURL:SNURL(@"testModule/vcone") params:@{@"bgColor":[UIColor yellowColor]} completion:NULL];
 }
 
 

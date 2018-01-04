@@ -11,7 +11,7 @@
 
 @interface SNModuleConfig : NSObject
 @property (copy, nonatomic) NSString *name; //模块名，用作 host
-@property (copy, nonatomic) NSString *scheme; //通信协议,app间跳转协议, 原生页面使用snow，web页面为 http、https等
+@property (copy, nonatomic) NSString *scheme; //通信协议,比如http、https等 暂时无用可空;apple用URL scheme进行app间的跳转
 @property (copy, nonatomic) NSString *delegateClass; //用于管理module内部AppDeleate，必须遵循SNAppDelegate协议
 @property (strong, nonatomic) NSArray<SNRouterItem *> *routerList;  //路由列表
 @property (strong, nonatomic) NSArray<SNServiceItem *> *serviceList; //服务列表

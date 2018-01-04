@@ -22,22 +22,30 @@
 
 + (BOOL)routeURL:(NSURL *)URL
 {
-    return [[SNRouteManger shareInstance] openURL:URL withParams:nil completion:NULL];
+    BOOL flag = [[SNRouteManger shareInstance] routeURL:URL params:nil completion:NULL];
+    return flag;
 }
 
 + (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params
 {
-    return [[SNRouteManger shareInstance] openURL:URL withParams:params completion:NULL];
+    BOOL flag = [[SNRouteManger shareInstance] routeURL:URL params:params completion:NULL];
+    return flag;
 }
 
 + (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void(^ _Nullable)(id _Nullable result))completion
 {
-    return [[SNRouteManger shareInstance] openURL:URL withParams:params completion:completion];
+    BOOL flag = [[SNRouteManger shareInstance] routeURL:URL params:params completion:completion];
+    return flag;
 }
 
 + (nullable id)getService:(NSString *)serviceName
 {
     return [[SNServiceManger shareInstance] getService:serviceName];
+}
+
++ (void)routeBackToURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))block
+{
+    [[SNRouteManger shareInstance] routeBackToURL:URL params:params completion:block];
 }
 
 

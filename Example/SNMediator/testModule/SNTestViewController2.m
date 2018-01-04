@@ -10,6 +10,7 @@
 #import "SNMediator.h"
 
 @interface SNTestViewController2 ()
+- (IBAction)pushToVC4:(id)sender;
 
 @end
 
@@ -45,5 +46,11 @@
 {
     [SNMediator routeURL:SNURL(@"testModule/nonexistent") params:nil];
 }
+
+- (IBAction)pushToVC4:(id)sender
+{
+    [SNMediator routeURL:SNURL(@"testModule/vcfour")];
+}
+
 
 @end

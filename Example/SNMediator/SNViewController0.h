@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface SNViewController : UIViewController
+@interface SNViewController0 : UIViewController
 
 @end

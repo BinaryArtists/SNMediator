@@ -286,7 +286,7 @@ struct dummy arg = va_arg(args, struct dummy); \
 
 - (void)sn_setParams:(NSDictionary*)params
 {
-    if (params==nil||![params isKindOfClass:[NSMutableDictionary class]]) {
+    if (params==nil||![params isKindOfClass:[NSDictionary class]]) {
         return;
     }
     __block NSObject *blockSelf = self;

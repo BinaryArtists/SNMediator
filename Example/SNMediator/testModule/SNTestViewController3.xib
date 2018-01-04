@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,6 +38,17 @@
                         <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="NrZ-Wc-Wbn"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSD-ss-45B">
+                    <rect key="frame" x="145" y="330" width="85" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="KF7-sb-wcw"/>
+                        <constraint firstAttribute="width" constant="85" id="xac-Bg-LbV"/>
+                    </constraints>
+                    <state key="normal" title="push to VC4"/>
+                    <connections>
+                        <action selector="pushToVC4:" destination="-1" eventType="touchUpInside" id="9fe-Mh-TLg"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -45,6 +56,8 @@
                 <constraint firstAttribute="trailing" secondItem="MFI-Za-lri" secondAttribute="trailing" id="8Do-T0-T0d"/>
                 <constraint firstItem="dur-7R-YCE" firstAttribute="top" secondItem="MFI-Za-lri" secondAttribute="bottom" constant="100" id="Bsx-yQ-qXl"/>
                 <constraint firstItem="MFI-Za-lri" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="dpd-Oc-i1R"/>
+                <constraint firstItem="XSD-ss-45B" firstAttribute="top" secondItem="dur-7R-YCE" secondAttribute="bottom" constant="50" id="fL3-aQ-dy7"/>
+                <constraint firstItem="XSD-ss-45B" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hyx-5i-y7C"/>
                 <constraint firstItem="dur-7R-YCE" firstAttribute="height" secondItem="MFI-Za-lri" secondAttribute="height" id="lpw-on-pDq"/>
                 <constraint firstItem="MFI-Za-lri" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yda-vG-uIy"/>
             </constraints>

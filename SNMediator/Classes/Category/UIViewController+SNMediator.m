@@ -38,4 +38,40 @@
     return viewController;
 }
 
+//控制器是否在视图栈中(可能没有显示出来，但是存在于视图栈中，存在于内存中)
+- (BOOL)sn_inViewStack
+{
+    return self.parentViewController || self.presentingViewController;
+}
+
++ (void)sn_dismissAllPresentedViewControllerWithCurrentVC:(UIViewController *)currentVC
+{
+    UIViewController *tempVC = currentVC;
+    if (tempVC.presentingViewController) {
+        tempVC = tempVC.presentingViewController;
+        [tempVC dismissViewControllerAnimated:NO completion:^{
+            [[self class] sn_dismissAllPresentedViewControllerWithCurrentVC:tempVC];
+        }];
+    } else if (tempVC.presentedViewController) {
+        [tempVC dismissViewControllerAnimated:NO completion:^{
+            [[self class] sn_dismissAllPresentedViewControllerWithCurrentVC:tempVC];
+        }];
+    } else {
+        return;
+    }
+}
+
+- (NSArray *)getViewControllerRelationStack
+{
+    //获取关于 tempVC 的导航关系栈
+    NSMutableArray *vcStack = [NSMutableArray array];
+    UIViewController *tempVC = self;
+    [vcStack addObject:tempVC];
+    while (tempVC.parentViewController || tempVC.presentingViewController) {
+        tempVC = tempVC.parentViewController?:tempVC.presentingViewController;
+        [vcStack addObject:tempVC];
+    }
+    return vcStack;
+}
+
 @end

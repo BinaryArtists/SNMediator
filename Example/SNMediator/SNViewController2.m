@@ -1,24 +1,23 @@
 //
-//  SNTestViewController3.m
+//  SNViewController2.m
 //  SNMediator_Example
 //
-//  Created by 杨洁 on 2017/11/22.
+//  Created by 杨洁 on 2017/12/29.
 //  Copyright © 2017年 yangjie2. All rights reserved.
 //
 
-#import "SNTestViewController3.h"
-#import "SNMediator.h"
+#import "SNViewController2.h"
 
-@interface SNTestViewController3 ()
+@interface SNViewController2 ()
 
 @end
 
-@implementation SNTestViewController3
+@implementation SNViewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"vcThree";
-    // Do any additional setup after loading the view from its nib.
+    [self setTitle:@"我"];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,17 +34,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)buttonClicked:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (IBAction)pushToVC4:(id)sender
-{
-    [SNMediator routeURL:SNURL(@"testModule/vcfour")];
-}
-
-
 
 @end

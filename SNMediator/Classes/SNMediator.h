@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void(^ _Nullable)(id _Nullable result))completion;
 
++ (void)routeBackToURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))block;
+
 + (nullable id)getService:(NSString *)serviceName;
 
 @end

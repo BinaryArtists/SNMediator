@@ -6,7 +6,7 @@
 		<key>name</key>
 		<string>testModule</string>
 		<key>scheme</key>
-		<string>snow</string>
+		<string></string>
 		<key>delegateClass</key>
 		<string>SNTestModuleAppDelegate</string>
 		<key>routerList</key>
@@ -34,6 +34,14 @@
 				<string>SNTestViewController3</string>
 				<key>routeType</key>
 				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>vcfour</string>
+				<key>className</key>
+				<string>SNTestViewController4</string>
+				<key>routeType</key>
+				<integer>0</integer>
 			</dict>
 		</array>
 		<key>serviceList</key>

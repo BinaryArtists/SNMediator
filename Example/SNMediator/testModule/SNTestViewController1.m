@@ -11,6 +11,7 @@
 
 
 @interface SNTestViewController1 ()
+@property (nonatomic, strong) UIColor *bgColor;
 
 @end
 
@@ -41,5 +42,14 @@
 {
     [SNMediator routeURL:SNURL(@"testModule/vctwo") params:nil completion:NULL];
 }
+
+
+#pragma mark - setter
+- (void)setBgColor:(UIColor *)bgColor
+{
+    _bgColor = bgColor;
+    self.view.backgroundColor = bgColor;
+}
+
 
 @end

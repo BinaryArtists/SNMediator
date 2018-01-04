@@ -76,8 +76,7 @@ fragment  信息片断，字符串，用于指定网络资源中的片断。例�
 
 
 
-![注册模块的plist配置](http://upload-images.jianshu.io/upload_images/2118879-6eddb38140b1526b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![](http://upload-images.jianshu.io/upload_images/2118879-6cc93c787d321eca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![注册模块的plist配置](http://upload-images.jianshu.io/upload_images/2118879-5dcd360538390db3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 

@@ -1,14 +1,13 @@
 //
-//  SNTestViewController1.h
+//  SNViewController1.h
 //  SNMediator_Example
 //
-//  Created by 杨洁 on 2017/11/22.
+//  Created by 杨洁 on 2017/12/29.
 //  Copyright © 2017年 yangjie2. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SNTestViewController1 : UIViewController
-
+@interface SNViewController1 : UIViewController
 
 @end

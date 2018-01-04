@@ -6,7 +6,7 @@
 //  Copyright (c) 2017 yangjie2. All rights reserved.
 //
 
-#import "SNViewController.h"
+#import "SNViewController0.h"
 #import "NSObject+SNTargetAction.h"
 #import "NSURL+SNMediator.h"
 #import "SNMediator.h"
@@ -34,25 +34,26 @@
 
 @end
 
-@interface SNViewController ()
+@interface SNViewController0 ()
 
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) NSMutableArray *logsArr;
 
 @end
 
-@implementation SNViewController
+@implementation SNViewController0
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setTitle:@"首页"];
     _logsArr = [NSMutableArray arrayWithCapacity:10];
 
 }
 
 - (IBAction)testRoute:(id)sender
 {
-    [[SNRouteManger shareInstance] openURL:SNURL(@"testModule/vcone") withParams:nil completion:NULL];
+    [[SNRouteManger shareInstance] routeURL:SNURL(@"testModule/vcone") params:nil completion:NULL];
 }
 
 - (IBAction)testService:(id)sender
