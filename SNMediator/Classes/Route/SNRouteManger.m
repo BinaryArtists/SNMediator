@@ -130,6 +130,9 @@ static SNRouteManger *instance = nil;
 {
     SNRouterItem *targetItem = [self routerItemWithURL:popURL];
     if (!targetItem) {
+        if (block) {
+            block(nil);
+        }
         return;
     }
     UIViewController *currentVC = [UIViewController sn_currentViewController];
@@ -222,11 +225,9 @@ static SNRouteManger *instance = nil;
 
         }
     }
-}
-
-- (void)routeBackToURL:(NSURL *)popURL thenRouteURL:(nullable NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))block
-{
-    
+    if (block) {
+        block(nil);
+    }
 }
 
 

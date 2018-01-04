@@ -22,9 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))block;
 - (UIViewController *)viewControllerForURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (SNRouterItem  *routerItem))block;
 
-//根据URL后退到(跳转到)某个已经存在于视图栈中的VC界面
+//后退到(跳转到)popURL界面，该页面已经存在于视图栈中，并逆向传参params
 - (void)routeBackToURL:(NSURL *)popURL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))block;
-- (void)routeBackToURL:(NSURL *)popURL thenRouteURL:(nullable NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))block;
 
 @end
 NS_ASSUME_NONNULL_END
