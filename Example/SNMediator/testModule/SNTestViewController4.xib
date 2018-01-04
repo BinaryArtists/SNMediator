@@ -29,13 +29,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-GE-Y34">
-                    <rect key="frame" x="62.5" y="318.5" width="250" height="30"/>
+                    <rect key="frame" x="82.5" y="318.5" width="210" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Otz-jn-CkW"/>
-                        <constraint firstAttribute="width" constant="250" id="uqN-dZ-4uH"/>
+                        <constraint firstAttribute="width" constant="210" id="uqN-dZ-4uH"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <state key="normal" title="back to specific VC 逆向传参改变背景色"/>
+                    <state key="normal" title="back to VCone 并逆向传参改变背景色"/>
                     <connections>
                         <action selector="backToSpecificVC:" destination="-1" eventType="touchUpInside" id="MtL-Mk-j2g"/>
                     </connections>
