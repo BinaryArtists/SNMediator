@@ -4,8 +4,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SNMediator'
-  s.version          = '0.1.3'
-  s.summary          = 'SNMediator is a solution for iOS Application module programs which is the bridge of communication between modules.'
+  s.version          = '0.1.5'
+  s.summary          = 'SNMediator is a solution for iOS Application module programs, it's the bridge to communicate between modules without bring about coupling.'
 
   s.description      = <<-DESC
     SNMediator is a flexible mediator for iOS applications that will be modularized. 
@@ -22,7 +22,7 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'SNMediator/Classes/**/*.{h,m}'
-  s.resources = ['SNMediator/Assets/*','SNMediator/Classes/*.xib']
+  s.source_files = 'SNMediator/Classes/**/*.{h,m,xib}'
+  s.resources = 'SNMediator/Assets/*'
 
 end
