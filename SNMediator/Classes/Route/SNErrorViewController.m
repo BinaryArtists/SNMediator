@@ -59,10 +59,10 @@
 {
     UILabel *label = [[UILabel alloc] init];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setText:@"页面错误"];
-    [label setTextColor:[UIColor blueColor]];
+    [label setText:@"页面不存在"];
+    [label setTextColor:[UIColor colorWithRed:40.f/255 green:183.f/255 blue:235.f/255 alpha:1.0]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont systemFontOfSize:16]];
+    [label setFont:[UIFont systemFontOfSize:14]];
     [self.view addSubview:label];
     NSLayoutConstraint *constraint1 = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
     NSLayoutConstraint *constraint2 = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];

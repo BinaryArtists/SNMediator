@@ -32,8 +32,7 @@ SNMediator 是一个灵活的用于 iOS 应用进行模块化拆分的中间件�
 - 插件化的模块开发运行框架
 - 模块具体实现与接口调用分离
 - 模块生命周期管理
-
-  待实现：夸界面传参
+- 支持返回到已经存在于视图栈中的页面，并逆向传参更新页面
 	
 			
 ## 3. URL规则
@@ -131,11 +130,16 @@ fragment  信息片断，字符串，用于指定网络资源中的片断。例�
 页面跳转：
 
 ```
+//跳转到新的页面
 + (BOOL)routeURL:(NSURL *)URL;
 
 + (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params;
 
 + (BOOL)routeURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void(^ _Nullable)(id _Nullable result))completion;
+
+//返回到已经存在于视图栈中的页面，并逆向传参更新页面 (页面如果不存在，则无任何响应)
++ (void)routeBackToURL:(NSURL *)URL params:(nullable NSDictionary *)params completion:(void (^_Nullable) (id _Nullable result))block;
+
 ```
 
 服务获取：
@@ -145,12 +149,17 @@ fragment  信息片断，字符串，用于指定网络资源中的片断。例�
 
 ```
 
-例子如下：
+比如：
 
 ```
+//跳转到新的页面
 [SNMediator routeURL:SNURL(@"testModule/vcone") params:nil completion:NULL];
 
+//获取服务
 [[SNMediator getService:@"testModule/sayHello"] performAction:@"sayHello"];
+
+//返回到已经存在于视图栈中的某个界面, 并传参改变其背景颜色
+[SNMediator routeBackToURL:SNURL(@"testModule/vcone") params:@{@"bgColor":[UIColor yellowColor]} completion:NULL];
 
 ```
 

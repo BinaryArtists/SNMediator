@@ -106,9 +106,19 @@ static SNRouteManger *instance = nil;
     
     //Web URL
     if ([URL.scheme.lowercaseString isEqualToString:@"http"]||[URL.scheme.lowercaseString isEqualToString:@"https"]) {
-        NSMutableDictionary *mParams = params?[params mutableCopy]:[NSMutableDictionary dictionary];
-        mParams[@"webURL"] = [URL absoluteString];
-        return [self viewControllerForURL:SNURL(@"appbase/webbrowser") params:mParams completion:block];
+        /*
+         
+         Intercept web URL to do your job.
+         
+         advise:
+         
+         app and web can make an appointment, for native to web, native route a web URL with scheme http/https, for web to native, web configure a native URL with scheme "appScheme"(your app scheme). then your app can route correctly with SNMediator.  So in addition, app and web must maintain a URL table together and update in time when table changes.
+         
+         */
+        
+//        NSMutableDictionary *mParams = params?[params mutableCopy]:[NSMutableDictionary dictionary];
+//        mParams[@"webURL"] = [URL absoluteString];
+//        return [self viewControllerForURL:SNURL(@"appbase/webbrowser") params:mParams completion:block];
     }
     
     //local URL
@@ -179,13 +189,6 @@ static SNRouteManger *instance = nil;
                 }
             }
             //选中的index视图栈内没有找到，则在其他index出查找
-            if (tabBarVC.presentedViewController) {
-                [tabBarVC dismissViewControllerAnimated:NO completion:NULL];
-            }
-            if ([tabBarVC.selectedViewController isKindOfClass:[UINavigationController class]]) {
-                UINavigationController *nav = (UINavigationController *)tabBarVC.selectedViewController;
-                [nav popToRootViewControllerAnimated:NO];
-            }
             for (UIViewController *obj in tabBarVC.viewControllers) {
                 if ([obj isKindOfClass:[UINavigationController class]]) {
                     UINavigationController *navigaVC = (UINavigationController *)obj;
@@ -195,6 +198,13 @@ static SNRouteManger *instance = nil;
                         if (block) {
                             block(rootVC);
                         }
+                        if (tabBarVC.presentedViewController) {
+                            [tabBarVC dismissViewControllerAnimated:NO completion:NULL];
+                        }
+                        if ([tabBarVC.selectedViewController isKindOfClass:[UINavigationController class]]) {
+                            UINavigationController *nav = (UINavigationController *)tabBarVC.selectedViewController;
+                            [nav popToRootViewControllerAnimated:NO];
+                        }
                         [tabBarVC setSelectedViewController:navigaVC];
                         return;
                     }
@@ -203,6 +213,13 @@ static SNRouteManger *instance = nil;
                         [obj sn_setParams:params];
                         if (block) {
                             block(obj);
+                        }
+                        if (tabBarVC.presentedViewController) {
+                            [tabBarVC dismissViewControllerAnimated:NO completion:NULL];
+                        }
+                        if ([tabBarVC.selectedViewController isKindOfClass:[UINavigationController class]]) {
+                            UINavigationController *nav = (UINavigationController *)tabBarVC.selectedViewController;
+                            [nav popToRootViewControllerAnimated:NO];
                         }
                         if (obj.presentedViewController) {
                             [obj dismissViewControllerAnimated:NO completion:NULL];
@@ -245,6 +262,7 @@ static SNRouteManger *instance = nil;
     if (block) {
         block(nil);
     }
+    NSLog(@"the target view controller is non-existent in stack !!");
 }
 
 
